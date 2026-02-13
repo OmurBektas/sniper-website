@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sniper Internet Cafe | V9.0 Online Satış</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* --- AYARLAR --- */
+        :root { --primary: #FFD700; --bg: #0b0b0b; --card-bg: #141414; --text: #e0e0e0; --radius: 25px; }
+        body { font-family: 'Rajdhani', sans-serif; background-color: var(--bg); color: var(--text); margin: 0; line-height: 1.6; overflow-x: hidden; }
+        
+        header { padding: 100px 20px; text-align: center; background: linear-gradient(180deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 100%), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2000'); background-size: cover; background-position: center; border-bottom: 4px solid var(--primary); border-radius: 0 0 50px 50px; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 5rem; font-weight: 900; color: var(--primary); margin: 0; text-shadow: 0 0 30px rgba(255, 215, 0, 0.3); display: inline-block; cursor: default; }
+        .logo:hover { animation: sniperShake 0.5s infinite; color: #fff; text-shadow: 0 0 10px var(--primary), 0 0 40px var(--primary); }
+        @keyframes sniperShake { 0% { transform: translate(1px, 1px) rotate(0deg); } 10% { transform: translate(-1px, -2px) rotate(-1deg); } 20% { transform: translate(-3px, 0px) rotate(1deg); } 30% { transform: translate(3px, 2px) rotate(0deg); } 40% { transform: translate(1px, -1px) rotate(1deg); } 50% { transform: translate(-1px, 2px) rotate(-1deg); } 60% { transform: translate(-3px, 1px) rotate(0deg); } 70% { transform: translate(3px, 1px) rotate(-1deg); } 80% { transform: translate(-1px, -1px) rotate(1deg); } 90% { transform: translate(1px, 2px) rotate(0deg); } 100% { transform: translate(1px, -2px) rotate(-1deg); } }
+        
+        .container { max-width: 1200px; margin: auto; padding: 60px 20px; }
+        .section-title { text-align: center; font-family: 'Orbitron', sans-serif; font-size: 2.5rem; color: #fff; margin-bottom: 40px; position: relative; width: 100%; display:inline-block;}
+        .section-title span { border-bottom: 3px solid var(--primary); padding-bottom: 10px; }
+        .section-title::after { content: '♦'; display: block; color: var(--primary); font-size: 20px; margin-top: 10px; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px; }
+        .card { background: var(--card-bg); padding: 40px; border-radius: var(--radius); border: 1px solid #222; transition: 0.4s; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; }
+        .card:hover { transform: translateY(-10px) scale(1.02); border-color: var(--primary); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+        .price-tag { background: var(--primary); color: #000; padding: 5px 15px; border-radius: 20px; font-weight: bold; font-size: 1.2rem; display: inline-block; margin-top: 20px; text-align: center; }
+
+        /* MAĞAZA (GÜNCELLENDİ) */
+        .shop-container { display: flex; overflow-x: auto; gap: 20px; padding-bottom: 30px; scroll-behavior: smooth; scrollbar-width: thin; scrollbar-color: var(--primary) #111; }
+        .shop-card { min-width: 260px; background: #1a1a1a; border-radius: var(--radius); padding: 20px; border: 1px solid #333; text-align: center; transition: 0.3s; position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+        .shop-card:hover { background: #222; border-color: var(--primary); transform: translateY(-5px); }
+        .shop-img { width: 100%; height: 160px; object-fit: contain; background: #000; border-radius: 15px; margin-bottom: 15px; border: 1px solid #333; }
+        
+        .shop-price { color: var(--primary); font-size: 1.3rem; font-weight: bold; margin: 10px 0; display: block; }
+
+        /* SATIN AL BUTONU */
+        .buy-link-btn {
+            background: linear-gradient(90deg, #FFD700, #ffb700);
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 50px;
+            font-weight: 800;
+            display: block;
+            margin-top: auto;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
+        }
+        .buy-link-btn:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4); }
+
+        .whatsapp-button { position: fixed; bottom: 30px; right: 30px; background-color: #25d366; color: white; padding: 12px 25px; border-radius: 50px; display: flex; align-items: center; text-decoration: none; font-weight: bold; z-index: 9999; transition: 0.3s; }
+        .whatsapp-button:hover { transform: scale(1.1); background-color: #128c7e; }
+        .whatsapp-button img { width: 25px; height: 25px; margin-right: 12px; }
+        @media (max-width: 768px) { .whatsapp-button span { display: none; } .whatsapp-button { padding: 15px; border-radius: 50%; } .whatsapp-button img { margin-right: 0; } }
+        iframe { width: 100%; height: 350px; border: none; border-radius: 20px; filter: invert(90%) hue-rotate(180deg); }
+    </style>
+</head>
+<body>
+
+<a href="https://wa.me/905393908758?text=Merhaba,%20Sniper%20Cafe%20için%20bilgi%20almak%20istiyorum." class="whatsapp-button" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <span>Canlı Destek & Rezervasyon</span>
+</a>
+
+<header>
+    <h1 class="logo">SNIPER INTERNET CAFE</h1>
+    <div style="font-size: 1.5rem; letter-spacing: 8px; color: #fff; margin-top: 10px; opacity: 0.8;">PROFESSIONAL GAMING CENTER</div>
+</header>
+
+<div class="container">
+    
+    <div class="section-title"><span>HAKKIMIZDA</span></div>
+    <p id="about-display" style="text-align: center; max-width: 800px; margin: 0 auto 60px auto; font-size: 1.1rem; color: #aaa;">Yükleniyor...</p>
+
+    <div class="section-title"><span>OYUN ALANLARI</span></div>
+    <div class="grid" id="dynamic-systems">
+        <p style="text-align:center; width:100%; color:#555;">Sistemler yükleniyor...</p>
+    </div>
+
+    <div class="section-title"><span>EKİPMAN MAĞAZASI</span></div>
+    <div class="shop-container" id="dynamic-shop">
+        <p style="text-align:center; width:100%; color:#555;">Ürünler yükleniyor...</p>
+    </div>
+    <div style="text-align:center; color:#555; font-size:0.8rem; margin-top:10px;">(Kaydırmak için sürükleyin)</div>
+
+    <div style="margin-top: 80px;"></div>
+    <div class="section-title"><span>İLETİŞİM & KONUM</span></div>
+    <div class="contact-box" style="background: #111; border-radius: 40px; padding: 50px; border: 1px solid #333;">
+        <div class="grid" style="margin-bottom:0;">
+            <div><h3 style="color:var(--primary)">📍 Adresimiz</h3><p>Atatürk Mahallesi, Oyun Caddesi<br>No: 12/A Merkez</p></div>
+            <div><h3 style="color:var(--primary)">📞 Bize Ulaşın</h3><p style="font-size: 1.1rem;"><strong style="color:white;">Tel:</strong> 0539 390 87 58<br><strong style="color:white;">E-posta:</strong> sniperinternetcafe@gmail.com</p></div>
+        </div>
+        <div style="margin-top:30px; border-radius:20px; overflow:hidden; border:1px solid #333;">
+            <iframe src="https://www.google.com/maps?q=Sniper+Internet+Cafe&output=embed" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</div>
+
+<footer style="text-align: center; padding: 40px; color: #444;">© 2026 Sniper Internet Cafe. Designed for Gamers.</footer>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+    import { getFirestore, doc, collection, onSnapshot, query, orderBy } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyCa9Dtp37n2A5hstaYTQ2Fo_V8i6ecuijk",
+        authDomain: "sniperinternetweb01.firebaseapp.com",
+        projectId: "sniperinternetweb01",
+        storageBucket: "sniperinternetweb01.firebasestorage.app",
+        messagingSenderId: "542625304160",
+        appId: "1:542625304160:web:35cd52402f824e74b47d05",
+        measurementId: "G-17FKPD3832"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    onSnapshot(doc(db, "siteData", "genelAyarlar"), (doc) => {
+        if (doc.exists()) document.getElementById("about-display").innerText = doc.data().hakkimizda || "Hizmetinizdeyiz.";
+    });
+
+    const qSys = query(collection(db, "masalar"), orderBy("sira", "asc"));
+    onSnapshot(qSys, (snapshot) => {
+        const container = document.getElementById("dynamic-systems");
+        if (snapshot.empty) { container.innerHTML = '<p style="color:#555;">Henüz sistem eklenmedi.</p>'; return; }
+        container.innerHTML = "";
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            let detailsHTML = "";
+            if(data.detay) {
+                const items = data.detay.split(",");
+                items.forEach(item => { detailsHTML += `<li>${item.trim()}</li>`; });
+            }
+            container.innerHTML += `
+                <div class="card">
+                    <div>
+                        <h3 style="color:white; margin-top:0; text-transform:uppercase;">${data.ad}</h3>
+                        <p style="color:#888;">${data.ozellik}</p>
+                        <div style="margin: 20px 0; height: 2px; background: #333;"></div>
+                        <ul style="padding-left: 20px; color: #ccc;">${detailsHTML}</ul>
+                    </div>
+                    <span class="price-tag">${data.fiyat}</span>
+                </div>
+            `;
+        });
+    });
+
+    // MAĞAZA (SATIN ALMA BUTONU İLE)
+    const qProd = query(collection(db, "urunler"), orderBy("sira", "asc"));
+    onSnapshot(qProd, (snapshot) => {
+        const container = document.getElementById("dynamic-shop");
+        if (snapshot.empty) { container.innerHTML = '<p style="color:#555;">Henüz ürün eklenmedi.</p>'; return; }
+        container.innerHTML = "";
+        snapshot.forEach((doc) => {
+            const data = doc.data();
+            
+            // Eğer link varsa butonu göster, yoksa gösterme
+            let buyButtonHTML = "";
+            if (data.link && data.link.trim() !== "") {
+                buyButtonHTML = `<a href="${data.link}" target="_blank" class="buy-link-btn">SATIN AL</a>`;
+            }
+
+            container.innerHTML += `
+                <div class="shop-card">
+                    <img src="${data.resim}" class="shop-img" onerror="this.src='https://via.placeholder.com/150?text=Resim+Yok'">
+                    <h4 style="margin:10px 0; color:white;">${data.ad}</h4>
+                    <span class="shop-price">${data.fiyat}</span>
+                    ${buyButtonHTML}
+                </div>
+            `;
+        });
+    });
+</script>
+
+</body>
+</html>
